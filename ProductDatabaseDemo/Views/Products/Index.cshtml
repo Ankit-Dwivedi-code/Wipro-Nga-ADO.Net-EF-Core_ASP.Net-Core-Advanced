@@ -1,0 +1,21 @@
+@model IEnumerable<ProductApp.Models.Product>
+
+<h2>Product List</h2>
+<a href="/Products/Create">Add Product</a>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th><th>Name</th><th>Price</th><th>Action</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@p.Price</td>
+            <td>
+                <a href="/Products/Delete/@p.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
