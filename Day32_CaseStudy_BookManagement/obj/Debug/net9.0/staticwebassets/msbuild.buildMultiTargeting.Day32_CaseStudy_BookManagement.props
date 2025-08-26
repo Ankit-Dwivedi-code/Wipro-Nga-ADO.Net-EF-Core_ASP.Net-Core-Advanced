@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Day32_CaseStudy_BookManagement.props" />
+</Project>

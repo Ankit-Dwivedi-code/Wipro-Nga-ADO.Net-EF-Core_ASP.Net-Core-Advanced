@@ -1,0 +1,19 @@
+@* Here we will implement create book functionality *@
+
+@model Day32_CaseStudy_BookManagement.Models.Book
+
+<form asp-action="Create">
+    <div>
+        <label asp-for="id"></label>
+        <input asp-for="id" />  
+    </div>
+    <div>
+        <label asp-for="title"></label>
+        <input asp-for="title" />
+    </div>
+    <div>
+        <label asp-for="price"></label>
+        <input asp-for="price" />
+    </div>
+    <button type="submit">Create</button>
+</form>

@@ -1,0 +1,28 @@
+@* Here we will display the list of books *@
+
+@model IEnumerable<Day32_CaseStudy_BookManagement.Models.Book>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.id</td>
+                <td>@book.title</td>
+                <td>@book.price</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@book.id">View</a>
+                    <a asp-action="Edit" asp-route-id="@book.id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@book.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
