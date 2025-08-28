@@ -1,0 +1,21 @@
+@model IEnumerable<Day33_LibraryManagement_DBFirst_assignment.Models.Book>
+
+<h2>Books with Authors and Genres</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genres</th>
+    </tr>
+@foreach (var book in Model)
+{
+    <tr>
+        <td>@book.Title</td>
+        <td>@book.Author?.Name</td>
+        <td>
+            @string.Join(", ", book.GenresGenres.Select(g => g.Name)) <!-- FIXED -->
+        </td>
+    </tr>
+}
+</table>

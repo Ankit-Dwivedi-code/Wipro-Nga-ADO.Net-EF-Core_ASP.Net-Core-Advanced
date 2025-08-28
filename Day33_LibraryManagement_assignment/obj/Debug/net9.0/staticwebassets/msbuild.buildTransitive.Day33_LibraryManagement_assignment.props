@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Day33_LibraryManagement_assignment.props" />
+</Project>

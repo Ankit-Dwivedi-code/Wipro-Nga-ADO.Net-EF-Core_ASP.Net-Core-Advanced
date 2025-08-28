@@ -1,0 +1,17 @@
+@model IEnumerable<Day33_LibraryManagement_DBFirst_assignment.Models.Book>
+
+<h2>Books in Genre: @ViewBag.Genre</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+    </tr>
+@foreach (var book in Model)
+{
+    <tr>
+        <td>@book.Title</td>
+        <td>@book.Author?.Name</td>
+    </tr>
+}
+</table>
