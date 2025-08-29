@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Day35_JsonCookieDemo.props" />
+</Project>
