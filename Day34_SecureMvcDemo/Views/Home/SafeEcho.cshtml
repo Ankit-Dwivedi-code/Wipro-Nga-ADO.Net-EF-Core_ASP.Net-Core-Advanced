@@ -1,0 +1,54 @@
+<h2>Safe Echo output</h2>
+<p>Viewbag input: @ViewBag.Input</p>
+<form method="post" asp-action="SafeEcho">
+    <div class="form-group">
+        <label for="input">Enter some text:</label>
+        <input type="text" name="input" id="input" class="form-control" value="@ViewBag.Input" />
+        @Html.ValidationMessage("input", "", new { @class = "text-danger" })
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+</form>
+
+@if (!string.IsNullOrWhiteSpace(ViewBag.Input))
+{
+    <div class="alert alert-success mt-3">
+        <strong>You entered safely:</strong> @ViewBag.Input
+    </div>
+}
+
+@* razor automatically encodes output to prevent XSS attacks *@
+<p>for crosschekcing  you can try following malicou XSS atack 
+    <script>alert('XSS')</script> it won't execute </p>
+
+@* To see this in browser go on /Home/SafeEcho *@
+
+
+@* @{
+    ViewData["Title"] = "Safe Echo";
+}
+
+@{
+    ViewData["Title"] = "Safe Echo";
+}
+
+<h2>Safe Echo</h2>
+
+<form method="post" asp-action="SafeEcho">
+    <div class="form-group">
+        <label for="input">Enter some text:</label>
+        <input type="text" name="input" id="input" class="form-control" value="@ViewBag.Input" />
+        @Html.ValidationMessage("input", "", new { @class = "text-danger" })
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+</form>
+
+@if (!string.IsNullOrWhiteSpace(ViewBag.Input))
+{
+    <div class="alert alert-success mt-3">
+        <strong>You entered safely:</strong> @ViewBag.Input
+    </div>
+}
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+} *@
