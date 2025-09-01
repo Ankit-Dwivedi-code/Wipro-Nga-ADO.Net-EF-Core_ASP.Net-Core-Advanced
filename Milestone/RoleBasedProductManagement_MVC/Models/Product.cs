@@ -34,12 +34,13 @@ namespace RoleBasedProductManagement_MVC.Models
         [Required, StringLength(100)]
         public string Name { get; set; }
 
-        // Not mapped to DB, used only in UI
+        // UI-only field, not mapped to DB
         [NotMapped]
-        [Required]
+        [Required(ErrorMessage = "Price is required")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than 0")]
         public decimal Price { get; set; }
 
-        // Stored in DB as encrypted string
-        public string EncryptedPrice { get; set; }
+        // Encrypted string stored in DB
+        public string? EncryptedPrice { get; set; }
     }
 }

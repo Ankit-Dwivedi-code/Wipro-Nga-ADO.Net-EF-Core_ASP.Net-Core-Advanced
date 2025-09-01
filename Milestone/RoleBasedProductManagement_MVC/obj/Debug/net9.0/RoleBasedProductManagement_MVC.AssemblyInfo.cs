@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RoleBasedProductManagement_MVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2f410129d8a8c0dcffd13aeaeb99a876fb99248")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bad2def3d3a4cc8201518c1929755c5dfc0b10dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("RoleBasedProductManagement_MVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RoleBasedProductManagement_MVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

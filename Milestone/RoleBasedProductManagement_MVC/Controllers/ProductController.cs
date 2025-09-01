@@ -79,22 +79,22 @@ namespace RoleBasedProductManagement_MVC.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Name,Price")] Product product)
         {
-            if (ModelState.IsValid)
+            // Manually check ModelState and log errors if any
+            if (!ModelState.IsValid)
             {
-                // Encrypt price before storing in DB
-                if (product.Price > 0)
-                {
-                    product.EncryptedPrice = _protector.Protect(product.Price.ToString());
-                }
-
-                _context.Products.Add(product);
-                await _context.SaveChangesAsync();
-
-                TempData["SuccessMessage"] = $"Product \"{product.Name}\" has been successfully created!";
-                return RedirectToAction(nameof(Index));
+                // Optional: Debugging helper
+                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+                Console.WriteLine(string.Join(", ", errors));
+                return View("CreateProduct", product);
             }
 
-            return View("CreateProduct", product);
+            // Encrypt and save
+            product.EncryptedPrice = _protector.Protect(product.Price.ToString());
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = $"Product \"{product.Name}\" has been successfully created!";
+            return RedirectToAction(nameof(Index));
         }
 
         // ======================================================================
