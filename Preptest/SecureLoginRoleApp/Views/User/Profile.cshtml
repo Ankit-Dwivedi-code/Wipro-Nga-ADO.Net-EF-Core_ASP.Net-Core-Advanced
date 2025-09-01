@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Message";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100" style="background: linear-gradient(135deg, #f5f7fa, #c3cfe2);">
+    <div class="card shadow-lg p-4 rounded-4 text-center" style="width: 500px; background-color: rgba(255, 255, 255, 0.95); animation: fadeIn 1s;">
+        <div class="mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#0dcaf0" class="bi bi-info-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 .936-.252 1.06-.598l.088-.416c.065-.294.122-.352.417-.288l.088.018.082-.38-.45-.083c-.294-.07-.352-.176-.288-.469l.738-3.468c.194-.897-.105-1.319-.808-1.319-.545 0-.936.252-1.06.598l-.088.416c-.065.294-.122.352-.417.288l-.088-.018-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 .936-.252 1.06-.598l.088-.416c.065-.294.122-.352.417-.288l.088.018.082-.38z"/>
+            </svg>
+        </div>
+
+        <h3 class="fw-bold mb-2" style="color: #0dcaf0;">Notification</h3>
+        <p class="text-muted fs-5">@ViewBag.Message</p>
+
+        <a href="/" class="btn btn-gradient mt-3" style="background: linear-gradient(to right, #667eea, #764ba2); color: white; width: 150px;">Go Home</a>
+    </div>
+</div>
+
+

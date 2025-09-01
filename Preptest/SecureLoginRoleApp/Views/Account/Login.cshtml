@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="d-flex align-items-center justify-content-center vh-100" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+    <div class="card shadow-lg p-4 rounded-4" style="width: 400px; background-color: rgba(255, 255, 255, 0.95);">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold" style="color: #4b00ff;">Welcome Back</h2>
+            <p class="text-muted">Please login to your account</p>
+        </div>
+
+        <form asp-action="Login" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="form-floating mb-3">
+                <input type="text" name="username" class="form-control" id="username" placeholder="Username" required>
+                <label for="username">Username</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                <label for="password">Password</label>
+            </div>
+
+            <button type="submit" class="btn btn-gradient w-100 mb-3" style="background: linear-gradient(to right, #667eea, #764ba2); color: white;">Login</button>
+
+            @if(ViewBag.Error != null)
+            {
+                <div class="alert alert-danger text-center">@ViewBag.Error</div>
+            }
+        </form>
+
+        <div class="text-center mt-3">
+            <a href="#" class="text-decoration-none" style="color: #764ba2;">Forgot password?</a>
+        </div>
+    </div>
+</div>
